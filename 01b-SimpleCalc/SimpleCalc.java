@@ -2,18 +2,42 @@ import java.util.Scanner;
 
 public class SimpleCalc {
 
-	public Scanner sc;
-	public int ans;
+	public static Scanner sc;
+	public static int ans;
 
 	public static int opAddition() {
 		System.out.println("Enter First Addend:");
-		int a = sc.nextInt(System.in);
+		int a = sc.nextInt();
 		System.out.println("Enter Second Addend:");
-                int b = sc.nextInt(System.in);
+                int b = sc.nextInt();
 		return a + b;
-	} 
+	}
 
-	public static int main(String[] args) {
+	public static int opSubtraction() {
+                System.out.println("Enter Minuend:");
+                int a = sc.nextInt();
+                System.out.println("Enter Subtrahend:");
+                int b = sc.nextInt();
+                return a - b;
+        }
+
+	public static int opMultiplication() {
+                System.out.println("Enter First Factor:");
+                int a = sc.nextInt();
+                System.out.println("Enter Second Factor:");
+                int b = sc.nextInt();
+                return a * b;
+        }
+
+	public static int opDivision() {
+                System.out.println("Enter Dividend:");
+                int a = sc.nextInt();
+                System.out.println("Enter Divisor:");
+                int b = sc.nextInt();
+                return a / b;
+        }
+
+	public static void main(String[] args) {
 		sc = new Scanner(System.in);
 		char operation;
 
@@ -34,9 +58,12 @@ public class SimpleCalc {
 			case '/': ans = opDivision();
 				  break;
 			default:  System.out.println("Input Invalid!");
-				  return 0;
-				  break;
+				  System.exit(0);
 		}
+
+		System.out.print("The answer is: ");
+		System.out.println(ans);
+		System.exit(0);
 	}
 } 
 
